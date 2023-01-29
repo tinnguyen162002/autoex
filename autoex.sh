@@ -33,30 +33,13 @@ sleep 1 && curl -s https://raw.githubusercontent.com/tinnguyen162002/logo/main/l
 	. $HOME/.bash_profile
 	sleep 1
 echo -e '\n\e[42mInstall Docker\e[0m\n' && sleep 1
-sudo apt install -y ca-certificates curl gnupg lsb-release
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update
-
-sudo apt install docker-ce docker-ce-cli containerd.io -y
-
-sudo usermod -aG docker $USER
+sudo apt install docker.io
 echo -e '\n\e[42mInstall ZIP\e[0m\n' && sleep 1
 
 sudo apt install unzip
 echo -e '\n\e[42mInstall exdore\e[0m\n' && sleep 1
 
-wget https://github.com/exorde-labs/ExordeModuleCLI/archive/refs/heads/main.zip \
---output-document=ExordeModuleCLI.zip
-cd $HOME
-unzip ExordeModuleCLI.zip \
-&& rm ExordeModuleCLI.zip \
-&& mv ExordeModuleCLI-main ExordeModuleCLI
-cd ExordeModuleCLI
-docker build -t exorde-cli:latest .
+
 ((count+= rem_ex / 2 ))
 ((i=0)) 
 while [ $i -le $count ]
