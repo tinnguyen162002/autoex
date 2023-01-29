@@ -33,7 +33,7 @@ sleep 1 && curl -s https://raw.githubusercontent.com/tinnguyen162002/logo/main/l
 	. $HOME/.bash_profile
 	sleep 1
 echo -e '\n\e[42mInstall Docker\e[0m\n' && sleep 1
-sudo apt install docker.io
+sudo apt install docker.io -y
 echo -e '\n\e[42mInstall ZIP\e[0m\n' && sleep 1
 
 sudo apt install unzip
